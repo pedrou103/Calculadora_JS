@@ -64,6 +64,7 @@ let calculadora = { //objeto calculadora
                 result = operador1 + operador2;
                 estado = 'result';
                 this.display();
+                
                 break;
             case 'subtracao':
                 result = operador1 - operador2;
@@ -111,7 +112,7 @@ let calculadora = { //objeto calculadora
                 document.getElementById("display").innerText = operador2;
                 break;
             case 'result':
-                expressao = document.getElementById("display2").innerHTML = operador1 + sinal + operador2;
+                expressao = document.getElementById("display2").innerHTML = operador1 + sinal + operador2 + ' =';
                 document.getElementById("display").innerText = result;
                 historico();
                 estado = 'operador1';
@@ -155,12 +156,16 @@ function historico() {
 function exibir() {
     let historico = JSON.parse(localStorage.getItem('calculadora'));
     let exibir = document.getElementById('exibir');
-    exibir.innerText = 'Historico:';
+    exibir.innerText = 'Histórico:';
 
     for (let i = 0; i <= historico.length; i++) {
         let express = historico[i].expressao;
         let result = historico[i].resultado;
-        exibir.innerHTML += `<ul><li>${express}</li>
-                                <li>${result}</li></ul>`
+        exibir.innerHTML += `<li>${express}</li>
+                                <li>${result}</li>`
     }
 }
+
+// function alterarModo() {
+//     document.getElementById("teste").classList.add('escuro');
+// }
