@@ -4,6 +4,15 @@ var operador2;
 var result;
 var operacao;
 var sinal;
+var expressao;
+
+function tecladoEvent(e) {
+    if (e.keyCode == 13 || e.keyCode == 187) {
+        calculadora.igual();
+    } else if (e.keyCode == 8) {
+        calculadora.del();
+    }
+}
 
 let calculadora = { //objeto calculadora
     numeros : new Array(), //array
@@ -31,7 +40,7 @@ let calculadora = { //objeto calculadora
         this.numeros = [];
     },
     
-    multiplicaçao : function() {
+    multiplicacao : function() {
         operacao = 'multiplicacao';
         estado = 'operador2';
         this.numeros = [];
@@ -102,15 +111,15 @@ let calculadora = { //objeto calculadora
                 document.getElementById("display").innerText = operador2;
                 break;
             case 'result':
-                document.getElementById("display2").innerHTML = operador1 + sinal + operador2;
+                expressao = document.getElementById("display2").innerHTML = operador1 + sinal + operador2;
                 document.getElementById("display").innerText = result;
+                historico();
                 estado = 'operador1';
                 break;
         }
     },
 
     proximonumero : function (digito) {
-
         switch (estado) {
             case 'operador1':
                 this.numeros.push(digito); //push -> function q coloca o valor digitado no final do array
@@ -123,5 +132,35 @@ let calculadora = { //objeto calculadora
                 this.display();
                 break;
         }
+    }
+}
+
+function historico() {
+    historicoObj = {
+        expressao: expressao, resultado: result
+    };
+
+    if (localStorage.getItem('calculadora') == null) {
+        let calculo = [];
+        calculo.push(historicoObj);
+        localStorage.setItem('calculadora', JSON.stringify(calculo));
+    } else {
+        let calculo = JSON.parse(localStorage.getItem('calculadora'));
+        calculo.push(historicoObj);
+        localStorage.setItem('calculadora', JSON.stringify(calculo));
+    }
+    exibir();
+}
+
+function exibir() {
+    let historico = JSON.parse(localStorage.getItem('calculadora'));
+    let exibir = document.getElementById('exibir');
+    exibir.innerText = 'Historico:';
+
+    for (let i = 0; i <= historico.length; i++) {
+        let express = historico[i].expressao;
+        let result = historico[i].resultado;
+        exibir.innerHTML += `<ul><li>${express}</li>
+                                <li>${result}</li></ul>`
     }
 }

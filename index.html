@@ -8,7 +8,7 @@
     <script src="script.js"></script>
     <title>Calculadora</title>
 </head>
-<body>
+<body onload="exibir()" onkeypress="tecladoEvent(event)">
     <div>
         <div id="display2"></div>
         <div id="display">Display</div>
@@ -33,6 +33,7 @@
         <button onclick=calculadora.proximonumero(0)>0</button>
         <button onclick=calculadora.igual()>=</button>
     </div>
+    <div id="exibir"></div>
     <script>calculadora.inicializacao();</script>
 </body>
 </html>

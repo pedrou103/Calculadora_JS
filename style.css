@@ -1,6 +1,30 @@
+body {
+    margin: auto;
+    font-family: 'Times New Roman', Times, serif;
+    max-width: 900px;
+}
+
 #display2, #display {
     width: 100px;
     height: 20px;
     border: 1px solid black;
     text-align: right;
+}
+
+#exibir {
+    width: 130px;
+    max-height: 400px;
+    border: 1px solid black;
+    padding: 0;
+    margin: 0;
+    overflow:auto;
+    text-align: right;
+    color: black;
+    padding-left: 0;
+}
+
+li {
+    list-style-type: none;
+    padding-right: 20px;
+    margin: 0;
 }
