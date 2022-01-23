@@ -50,6 +50,7 @@ button {
     text-align: center;
     border: 0;
     border-radius: 10px;
+    background-color: rgb(160, 159, 159);
 }
 
 .some {
@@ -65,9 +66,9 @@ button {
 
 #opera {
     float: right;
-    color: RoyalBlue;
+    color: white;
     font-weight: 600;
-    background-color: silver;
+    background-color: rgb(124, 119, 119);
 }
 
 #exibir {
@@ -86,11 +87,11 @@ li {
     margin-top: 5px;
 }
 
-/* .escuro {
+.escuro {
     background-color: #333131;
     color: white;
 }
 .escuro2 {
-    background-color: #4e4d4d;
-    color: white;
-} */
+    color: black;
+    background-color: rgb(160, 159, 159);
+}

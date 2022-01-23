@@ -1,3 +1,5 @@
+window.addEventListener("load", exibir);
+
 var estado; //momento em que a calculadora está
 var operador1;
 var operador2;
@@ -9,8 +11,6 @@ var expressao;
 function tecladoEvent(e) {
     if (e.keyCode == 13 || e.keyCode == 187) {
         calculadora.igual();
-    } else if (e.keyCode == 8) {
-        calculadora.del();
     }
 }
 
@@ -64,7 +64,6 @@ let calculadora = { //objeto calculadora
                 result = operador1 + operador2;
                 estado = 'result';
                 this.display();
-                
                 break;
             case 'subtracao':
                 result = operador1 - operador2;
@@ -137,6 +136,7 @@ let calculadora = { //objeto calculadora
 }
 
 function historico() {
+    console.log(` aaaaaaaaaaaa ${expressao}`)
     historicoObj = {
         expressao: expressao, resultado: result
     };
@@ -149,6 +149,7 @@ function historico() {
         let calculo = JSON.parse(localStorage.getItem('calculadora'));
         calculo.push(historicoObj);
         localStorage.setItem('calculadora', JSON.stringify(calculo));
+        console.table(calculo)
     }
     exibir();
 }
@@ -157,15 +158,38 @@ function exibir() {
     let historico = JSON.parse(localStorage.getItem('calculadora'));
     let exibir = document.getElementById('exibir');
     exibir.innerText = 'Histórico:';
-
+    
     for (let i = 0; i <= historico.length; i++) {
-        let express = historico[i].expressao;
+        console.log(historico[2].expressao)
+        let expressao = historico[i].expressao;
         let result = historico[i].resultado;
-        exibir.innerHTML += `<li>${express}</li>
+        exibir.innerHTML += `<li>${expressao}</li>
                                 <li>${result}</li>`
     }
 }
 
-// function alterarModo() {
-//     document.getElementById("teste").classList.add('escuro');
-// }
+function limpar() {
+    localStorage.clear();
+    exibir();
+}
+
+function alterarTema() {
+    if (document.getElementById("teste").classList.contains('escuro') === true) {
+        document.getElementById("teste").classList.remove('escuro');
+        var num = document.querySelectorAll("#num"); //retorna uma NodeList
+        var numArray = Array.from(num); //o From transforma a nodelist em um array
+        numArray.forEach((index) => {
+            index.classList.remove('escuro2');
+            console.log(index);
+        });
+    } else {
+        document.getElementById("teste").classList.add('escuro');
+        var num = document.querySelectorAll("#num");
+        var numArray = Array.from(num);
+        numArray.forEach((index) => {
+            index.classList.add('escuro2');
+            console.log(index);
+        });
+    }
+
+}

@@ -10,15 +10,15 @@
     <title>Calculadora</title>
 </head>
 
-<body onload="exibir()" onkeypress="tecladoEvent(event)" id="teste">
-    <div id="geral">
+<body onkeypress="tecladoEvent(event)" id="teste">
+    <div id="geral" >
         <div id="content">
             <div id="display2"></div>
             <div id="display">Display</div>
         </div>
         <div id="content2">
-            <button id="ac" onclick=calculadora.ac()>AC</button>
-            <button id="del" onclick=calculadora.del()>Del</button>
+            <button id="num" onclick=calculadora.ac()>AC</button>
+            <button id="num" onclick=calculadora.del()>Del</button>
             <button id="opera" class="some" onclick=calculadora.adicao()>+</button>
             <button id="opera" onclick=calculadora.divisao()>/</button>
             <button id="num" onclick=calculadora.proximonumero(1)>1</button>
@@ -32,13 +32,16 @@
             <button id="num" onclick=calculadora.proximonumero(7)>7</button>
             <button id="num" onclick=calculadora.proximonumero(8)>8</button>
             <button id="num" onclick=calculadora.proximonumero(9)>9</button>
-            <button onclick=calculadora.proximonumero('.')>.</button>
+            <button id="num" onclick=calculadora.proximonumero('.')>.</button>
             <button id="num" onclick=calculadora.proximonumero(0)>0</button>
             <button id="igual" onclick=calculadora.igual()>=</button>
         </div>
         <div id="exibir"><ul></ul></div>
     </div>
-    <!-- <div onclick="alterarModo()">Trocar</div> -->
+
+    <div onclick="alterarTema()">Tema</div>
+    <div onclick="limpar()">Limpar</div>
+
     <script>calculadora.inicializacao();</script>
 </body>
 
