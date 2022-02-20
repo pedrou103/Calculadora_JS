@@ -51,6 +51,7 @@ button {
     border: 0;
     border-radius: 10px;
     background-color: rgb(160, 159, 159);
+    cursor: pointer;
 }
 
 .some {
@@ -74,7 +75,7 @@ button {
 #exibir {
     border: 1px solid black;
     width: 130px;
-    height: 400px;
+    height: 390px;
     position: absolute;
     margin-left: 460px;
     overflow-y: none;
@@ -90,8 +91,43 @@ li {
 .escuro {
     background-color: #333131;
     color: white;
+    transition: all ease .5s;
 }
 .escuro2 {
     color: black;
     background-color: rgb(160, 159, 159);
+}
+
+#menu-area li {
+    display: block;
+    cursor: pointer;
+    height: 40px;
+    padding: 5px;
+    font-size: 18px;
+}
+#menu-area li:hover {
+    background-color: #DDD;
+}
+
+aside {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 999;
+    display: flex;
+}
+#menu-opener {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+#menu-area {
+    width: 0px;
+    height: 100vh;
+    background-color: rgb(124, 119, 119);
+    overflow-x: hidden;
+    overflow-y: auto;
+    transition: all ease .5s;
 }

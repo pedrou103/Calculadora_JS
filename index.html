@@ -10,7 +10,22 @@
     <title>Calculadora</title>
 </head>
 
-<body onkeypress="tecladoEvent(event)" id="teste">
+<body onkeypress="tecladoEvent(event)" id="body">
+    <aside>
+        <div id="menu-opener" >
+            <img onclick="abrir_menu()" id="img" src="/menu.png" width="36" />
+        </div>
+        <div id="menu-area">
+            <ul>
+                <li onclick="alterarTema()">
+                    <div>Tema</div>
+                </li>
+                <li onclick="limpar()">
+                    <div id="limpar">Limpar</div>
+                </li>
+            </ul>
+        </div>
+    </aside>
     <div id="geral" >
         <div id="content">
             <div id="display2"></div>
@@ -38,9 +53,6 @@
         </div>
         <div id="exibir"><ul></ul></div>
     </div>
-
-    <div onclick="alterarTema()">Tema</div>
-    <div onclick="limpar()">Limpar</div>
 
     <script>calculadora.inicializacao();</script>
 </body>
