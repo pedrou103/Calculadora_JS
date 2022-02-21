@@ -1,6 +1,8 @@
 # Calculadora_JS
 Mini projeto com JS, usando objeto
 
-![Calculadora](images/Calculadora.png)
+<P> Calculadora <p>
+![Calculadora](https://github.com/pedrou103/.github/blob/main/Calculadora.png)
 
-![Slider aberto](images/Calculadora2.png)
+<p> Menu lateral aberto
+![Slider aberto](https://github.com/pedrou103/.github/blob/main/Calculadora2.png)
