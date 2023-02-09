@@ -1,60 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
     <title>Calculadora</title>
+    
+    <link rel="stylesheet" href="style/style.css">
 </head>
+<body>
+    <section class="calculator">
+        <div class="visor">
+            <div class="calculation">1 + 1</div>
+            <div class="result">
+                <span>=</span>
+                <span>2</span>
+            </div>
+        </div>
+        <div class="buttons">
+            <div class="row">
+                <input type="button" class="button bg-button text-purple" value="CE">
+                <input type="button" class="button bg-button " value="C">
+                <input type="button" class="button bg-button " value="%">
+                <input type="button" class="button bg-purple-dark" value="/">
+            </div>
+            <div class="row">
+                <input type="button" class="button bg-button " value="7">
+                <input type="button" class="button bg-button " value="8">
+                <input type="button" class="button bg-button " value="9">
+                <input type="button" class="button bg-purple-dark" value="x">
+            </div>
+            <div class="row">
+                <input type="button" class="button bg-button " value="4">
+                <input type="button" class="button bg-button " value="5">
+                <input type="button" class="button bg-button " value="6">
+                <input type="button" class="button bg-purple-dark" value="-">
+            </div>
+            <div class="row">
+                <input type="button" class="button bg-button " value="1">
+                <input type="button" class="button bg-button " value="2">
+                <input type="button" class="button bg-button " value="3">
+                <input type="button" class="button bg-purple-dark" value="+">
+            </div>
+            <div class="row">
+                <input type="button" class="button bg-button " value="+/-">
+                <input type="button" class="button bg-button " value="0">
+                <input type="button" class="button bg-button " value=",">
+                <input type="button" class="button bg-purple-light" value="=">
+            </div>
+            <!-- <input type="button" value="CE" class="button bg-button text-purple"> -->
 
-<body onkeypress="tecladoEvent(event)" id="body">
-    <aside>
-        <div id="menu-opener" >
-            <img onclick="abrir_menu()" id="img" src="/menu.png" width="36" />
         </div>
-        <div id="menu-area">
-            <ul>
-                <li onclick="alterarTema()">
-                    <div>Tema</div>
-                </li>
-                <li onclick="limpar()">
-                    <div id="limpar">Limpar</div>
-                </li>
-            </ul>
-        </div>
-    </aside>
-    <div id="geral" >
-        <div id="content">
-            <div id="display2"></div>
-            <div id="display">Display</div>
-        </div>
-        <div id="content2">
-            <button id="num" onclick=calculadora.ac()>AC</button>
-            <button id="num" onclick=calculadora.del()>Del</button>
-            <button id="opera" class="some" onclick=calculadora.adicao()>+</button>
-            <button id="opera" onclick=calculadora.divisao()>/</button>
-            <button id="num" onclick=calculadora.proximonumero(1)>1</button>
-            <button id="num" onclick=calculadora.proximonumero(2)>2</button>
-            <button id="num" onclick=calculadora.proximonumero(3)>3</button>
-            <button id="opera" onclick=calculadora.subtracao()>-</button>
-            <button id="num" onclick=calculadora.proximonumero(4)>4</button>
-            <button id="num" onclick=calculadora.proximonumero(5)>5</button>
-            <button id="num" onclick=calculadora.proximonumero(6)>6</button>
-            <button id="opera" onclick=calculadora.multiplicacao()>x</button>
-            <button id="num" onclick=calculadora.proximonumero(7)>7</button>
-            <button id="num" onclick=calculadora.proximonumero(8)>8</button>
-            <button id="num" onclick=calculadora.proximonumero(9)>9</button>
-            <button id="num" onclick=calculadora.proximonumero('.')>.</button>
-            <button id="num" onclick=calculadora.proximonumero(0)>0</button>
-            <button id="igual" onclick=calculadora.igual()>=</button>
-        </div>
-        <div id="exibir"><ul></ul></div>
-    </div>
-
-    <script>calculadora.inicializacao();</script>
+    </section>
 </body>
-
 </html>

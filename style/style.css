@@ -1,0 +1,131 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik&display=swap");
+
+:root {
+  --purple: #975dfa;
+  --purple-light: #7f45e2;
+  --purple-dark: #462878;
+  --gray: #6b6b6b;
+  --dark-gray: #2d2a37;
+  --white: #ebebeb;
+
+  font-family: "Rubik", sans-serif;
+  font-weight: 400;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* my classes start */
+
+.button {
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100%;
+  border: none;
+  box-shadow: 0px 11px 7px rgba(0, 0, 0, 0.01), 0px 7px 7px rgba(0, 0, 0, 0.04),
+    0px 4px 6px rgba(0, 0, 0, 0.1), 0px 2px 4px rgba(0, 0, 0, 0.26),
+    0px 0px 2px rgba(0, 0, 0, 0.29), inset 0px 2px 3px rgba(255, 255, 255, 0.06);
+  font-family: "Rubik", sans-serif;
+  font-size: 24px;
+  line-height: 28px;
+  letter-spacing: -0.02em;
+  color: var(--white);
+}
+
+.text-purple {
+  color: var(--purple);
+}
+
+.bg-button {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.05) 0%, rgba(255, 255, 255, 0.05) 100%), #2D2A37;
+}
+
+.bg-purple-light {
+  background-color: var(--purple-light);
+}
+
+.bg-purple-dark {
+  background-color: var(--purple-dark);
+}
+
+/* my classes end */
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  background-image: linear-gradient(180deg, #807ece 0%, #8e7ece 100%);
+  display: grid;
+  place-items: center;
+}
+
+.calculator {
+  width: 356px;
+  height: 566px;
+  background: var(--dark-gray);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25),
+    0px 188px 52px rgba(0, 0, 0, 0.01), 0px 120px 48px rgba(0, 0, 0, 0.04),
+    0px 68px 41px rgba(0, 0, 0, 0.15), 0px 30px 30px rgba(0, 0, 0, 0.26),
+    0px 8px 17px rgba(0, 0, 0, 0.29), inset 0px 6px 8px rgba(255, 255, 255, 0.1),
+    inset 0px -4px 5px rgba(0, 0, 0, 0.22);
+  padding: 54px 36px 32px 32px;
+  border-radius: 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+
+.visor {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 0 22px 0 18px;
+}
+
+.visor .calculation {
+  width: 100%;
+  text-align: end;
+  font-size: 20px;
+  line-height: 140%;
+  color: var(--gray);
+}
+
+.visor .result {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.visor .result span:nth-child(1) {
+  color: var(--gray);
+  font-size: 20px;
+}
+
+.visor .result span:nth-child(2) {
+  color: var(--white);
+  font-size: 20px;
+  font-size: 36px;
+  line-height: 140%;
+  letter-spacing: -0.02em;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.buttons .row {
+    display: flex;
+    gap: 12px;
+}
+
+.buttons .row input:hover {
+    background-color: var(--gray);
+    transition: background .3s ease-in-out;
+}
